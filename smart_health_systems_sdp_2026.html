@@ -842,6 +842,175 @@
             margin: 0
         }
 
+        /* ── Day-wise Resources Section ─────────────────────────── */
+        .dayres-section {
+            background: var(--paper);
+        }
+
+        .dayres-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .dayres-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: box-shadow .2s, transform .2s, border-color .2s;
+        }
+
+        .dayres-card:hover {
+            box-shadow: 0 12px 28px rgba(16, 43, 70, .08);
+            transform: translateY(-2px);
+            border-color: #bcd4eb;
+        }
+
+        .dayres-soon {
+            opacity: .78;
+        }
+
+        .dayres-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 22px;
+            background: linear-gradient(110deg, #fff, #f6faff);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .dayres-datebox {
+            width: 68px;
+            height: 74px;
+            flex-shrink: 0;
+            border-radius: 14px;
+            background: linear-gradient(155deg, #0c2d53 0%, #06172d 100%);
+            border: 1px solid rgba(85, 214, 208, .35);
+            box-shadow: 0 6px 16px rgba(7,27,51,.16);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dayres-datebox::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cyan), var(--gold));
+        }
+
+        .dr-month {
+            font-size: 9.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .14em;
+            color: var(--cyan);
+            line-height: 1;
+        }
+
+        .dr-day {
+            font-size: 25px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.1;
+            letter-spacing: -.03em;
+        }
+
+        .dr-weekday {
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            color: #b8cde2;
+            line-height: 1;
+        }
+
+        .dayres-meta {
+            flex-grow: 1;
+        }
+
+        .dayres-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.3;
+            margin-bottom: 3px;
+        }
+
+        .dayres-sub {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .dayres-files {
+            padding: 14px 22px 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .dr-file-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: #eef8f7;
+            border: 1px solid #b2e0dc;
+            border-radius: 10px;
+            color: #0a5c60;
+            font-weight: 800;
+            font-size: 13px;
+            text-decoration: none;
+            transition: background .2s, transform .2s, box-shadow .2s;
+        }
+
+        .dr-file-btn:hover {
+            background: #d4f1ee;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(10, 92, 96, .15);
+        }
+
+        .dr-icon {
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        .dr-label {
+            flex-grow: 1;
+        }
+
+        .dr-badge {
+            font-size: 10px;
+            font-weight: 900;
+            background: rgba(10, 92, 96, .12);
+            color: #0a5c60;
+            border-radius: 5px;
+            padding: 2px 7px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+
+        .dr-coming-soon {
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-style: italic;
+        }
+
+        /* ── End Day-wise Resources ──────────────────────────────── */
+
         .outcomes {
             background: linear-gradient(135deg, #071b33, #0c3658);
             color: #fff
@@ -1502,10 +1671,11 @@
             <nav class="navlinks" aria-label="Main navigation">
                 <a href="#about">About</a>
                 <a href="#schedule">Schedule</a>
+                <a href="#dayresources">Resources</a>
                 <a href="#projects">Hardware &amp; Kits</a>
                 <a href="#faculty">Faculty</a>
                 <a href="#outcomes">Outcomes</a>
-                <a class="navcta" href="#projects">Download Kits &#x2193;</a>
+                <a class="navcta" href="#dayresources">Day Resources &#x2193;</a>
             </nav>
         </div>
     </header>
@@ -1639,6 +1809,18 @@
                                         <div class="time">4:40&ndash;5:00</div>
                                         <div class="topic">IoT applications, discussion and Q&amp;A<span class="faculty">Mrs.
                                                 Dipika Sharma / Mentors</span></div>
+                                    </div>
+                                    <div class="slot" style="border-top:1px solid #dce6f0;margin-top:8px;padding-top:14px;">
+                                        <div class="time" style="color:#0d777c;">📄 Resources</div>
+                                        <div class="topic">
+                                            <a href="sdp_site_assets/Day 1 Introduction1.pdf" download="Day_1_Introduction.pdf"
+                                               style="display:inline-flex;align-items:center;gap:8px;padding:9px 16px;background:#eef8f7;border:1px solid #b2e0dc;border-radius:10px;color:#0a5c60;font-weight:800;font-size:13px;text-decoration:none;transition:background .2s,transform .2s;"
+                                               onmouseover="this.style.background='#d4f1ee';this.style.transform='translateY(-1px)'"
+                                               onmouseout="this.style.background='#eef8f7';this.style.transform='none'">
+                                                &#x2193;&nbsp;Day 1 Introduction Slides
+                                                <span style="font-size:11px;font-weight:600;color:#5b8a8d;">(PDF)</span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1830,6 +2012,128 @@
                             </div>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+        <!-- ============================================================== -->
+        <!-- DAY-WISE RESOURCES                                             -->
+        <!-- ============================================================== -->
+        <section class="dayres-section" id="dayresources">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="kicker">Session Materials</div>
+                    <h2>Day-wise Resources</h2>
+                    <p>Download lecture slides, guides and reference materials for each day of the SDP. New files are added after each session.</p>
+                </div>
+                <div class="dayres-grid">
+
+                    <!-- DAY 1 -->
+                    <div class="dayres-card">
+                        <div class="dayres-header">
+                            <div class="dayres-datebox">
+                                <span class="dr-month">NOV</span>
+                                <span class="dr-day">17</span>
+                                <span class="dr-weekday">TUE</span>
+                            </div>
+                            <div class="dayres-meta">
+                                <div class="dayres-title">Day 1 — Smart Health Systems &amp; Biomedical Signals</div>
+                                <div class="dayres-sub">Foundations and acquisition</div>
+                            </div>
+                        </div>
+                        <div class="dayres-files">
+                            <a class="dr-file-btn" href="sdp_site_assets/Day 1 Introduction1.pdf" download="Day_1_Introduction.pdf">
+                                <span class="dr-icon">📄</span>
+                                <span class="dr-label">Day 1 Introduction Slides</span>
+                                <span class="dr-badge">PDF</span>
+                            </a>
+                            <a class="dr-file-btn" href="sdp_site_assets/Day 1 Introduction1.pptx" download="Day_1_Introduction.pptx">
+                                <span class="dr-icon">🖥️</span>
+                                <span class="dr-label">Day 1 Introduction Slides</span>
+                                <span class="dr-badge">PPTX</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- DAY 2 -->
+                    <div class="dayres-card dayres-soon">
+                        <div class="dayres-header">
+                            <div class="dayres-datebox">
+                                <span class="dr-month">NOV</span>
+                                <span class="dr-day">18</span>
+                                <span class="dr-weekday">WED</span>
+                            </div>
+                            <div class="dayres-meta">
+                                <div class="dayres-title">Day 2 — Biomedical Sensors &amp; Signal Conditioning</div>
+                                <div class="dayres-sub">Electrodes, amplifiers and filters</div>
+                            </div>
+                        </div>
+                        <div class="dayres-files">
+                            <div class="dr-coming-soon">
+                                <span>🕐</span> Resources will be uploaded after the session
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 3 -->
+                    <div class="dayres-card dayres-soon">
+                        <div class="dayres-header">
+                            <div class="dayres-datebox">
+                                <span class="dr-month">NOV</span>
+                                <span class="dr-day">19</span>
+                                <span class="dr-weekday">THU</span>
+                            </div>
+                            <div class="dayres-meta">
+                                <div class="dayres-title">Day 3 — PCB Design for Biomedical Applications</div>
+                                <div class="dayres-sub">Schematic to fabrication files</div>
+                            </div>
+                        </div>
+                        <div class="dayres-files">
+                            <div class="dr-coming-soon">
+                                <span>🕐</span> Resources will be uploaded after the session
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 4 -->
+                    <div class="dayres-card dayres-soon">
+                        <div class="dayres-header">
+                            <div class="dayres-datebox">
+                                <span class="dr-month">NOV</span>
+                                <span class="dr-day">20</span>
+                                <span class="dr-weekday">FRI</span>
+                            </div>
+                            <div class="dayres-meta">
+                                <div class="dayres-title">Day 4 — IoT, Embedded Systems &amp; Real-Time Cloud Logging</div>
+                                <div class="dayres-sub">ESP32, Firebase &amp; Google Sheets</div>
+                            </div>
+                        </div>
+                        <div class="dayres-files">
+                            <div class="dr-coming-soon">
+                                <span>🕐</span> Resources will be uploaded after the session
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 5 -->
+                    <div class="dayres-card dayres-soon">
+                        <div class="dayres-header">
+                            <div class="dayres-datebox">
+                                <span class="dr-month">NOV</span>
+                                <span class="dr-day">21</span>
+                                <span class="dr-weekday">SAT</span>
+                            </div>
+                            <div class="dayres-meta">
+                                <div class="dayres-title">Day 5 — Prototype Demonstration, Evaluation &amp; Valedictory</div>
+                                <div class="dayres-sub">Integration, evaluation and celebration</div>
+                            </div>
+                        </div>
+                        <div class="dayres-files">
+                            <div class="dr-coming-soon">
+                                <span>🕐</span> Resources will be uploaded after the session
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
